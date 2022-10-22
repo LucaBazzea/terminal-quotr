@@ -1,25 +1,35 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 )
 
-// type author struct {
-// 	author []author `json:"Dwight Schrute""`
-// }
+type Quote struct {
+	Text [1]string `json:"Dwight_Schrute"`
+}
 
-func main() {
-	jsonFile, err := os.Open("schrute.json")
+func loadQuote(filename string) (Quote, error) {
+	var quote Quote
+
+	quoteFile, err := os.Open(filename)
+	defer quoteFile.Close()
 
 	if err != nil {
-		fmt.Println(err)
-		return
+		return quote, err
 	}
 
+	jsonParser := json.NewDecoder(quoteFile)
+	err = jsonParser.Decode(&quote)
+
+	return quote, err
+}
+
+func main() {
 	fmt.Println("Opened JSON file")
 
-	defer jsonFile.Close()
+	quote, _ := loadQuote("schrute.json")
 
-	fmt.Println(jsonFile)
+	fmt.Println(quote)
 }
