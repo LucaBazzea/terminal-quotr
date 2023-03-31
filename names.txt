@@ -1,0 +1,10 @@
+    QuoteTerminal
+    TerminalWisdom
+    InspireShell
+    QuotePrompt
+    WiseTerm
+    CommandQuotes
+    MotivateTerm
+    QuotePrompter
+    ShellQuotes
+    TerminalInspiration
