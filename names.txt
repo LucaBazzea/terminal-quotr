@@ -3,6 +3,7 @@
     InspireShell
     QuotePrompt
     WiseTerm
+    WiseShell
     CommandQuotes
     MotivateTerm
     QuotePrompter
